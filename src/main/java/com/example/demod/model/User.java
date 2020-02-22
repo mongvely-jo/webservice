@@ -1,8 +1,6 @@
 package com.example.demod.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
@@ -13,6 +11,7 @@ import javax.persistence.Id;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Builder
 @Accessors(chain = true)
 public class User {
