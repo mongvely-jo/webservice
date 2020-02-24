@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -32,9 +33,9 @@ public class JoinService {
 
         log.info("{}",user);
 
-        User newUser = userRepository.save(user);
+        userRepository.save(user);
 
-        if(newUser == null){
+        if(user == null){
             return "join";
         }
         return "index";
