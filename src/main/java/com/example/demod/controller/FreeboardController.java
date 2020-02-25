@@ -1,6 +1,7 @@
 package com.example.demod.controller;
 
 import com.example.demod.model.Freeboard;
+import com.example.demod.service.freeboard.FreeboardInfoService;
 import com.example.demod.service.freeboard.FreeboardListService;
 import com.example.demod.service.freeboard.FreeboardWriteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class FreeboardController {
 
     @Autowired
     private FreeboardWriteService freeboardWriteService;
+
+    @Autowired
+    private FreeboardInfoService freeboardInfoService;
 
     private int returnIntValue(String stringToInt){
         return Integer.parseInt(stringToInt);
@@ -43,4 +47,10 @@ public class FreeboardController {
 
         return "redirect:/freeboard";   // /freeboard 매핑을 찾아서 호출을 하게됨 => @GetMapping("/freeboard")를 한번 더 호출 한다는 뜻
     }
+
+    @GetMapping("/freeBoardInfo")
+    public String getPost(@RequestParam(value = "freeId") String id) {
+        return freeboardInfoService.getFreeboardPost(id);
+    }
+
 }

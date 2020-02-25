@@ -79,7 +79,6 @@ public class PageMaker {
         this.currentBlock = pageNum / 5;
         if(pageNum % 5 > 0) {
             this.currentBlock++;
-            System.out.println(this.currentBlock); // 5페이지로 갔는데 현재 블록이 증가하지 않음
         }
     }
 

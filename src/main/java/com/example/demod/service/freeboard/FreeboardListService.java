@@ -30,7 +30,7 @@ public class FreeboardListService {
         PageMaker pageMaker = pageMakerService.generatePageMaker(pageNum, 10, freeboardRepository);
 
         // 페이지당 10개씩 id순으로 내림차순해서 보여줌 => 최신글이 위로
-        PageRequest pageRequest = PageRequest.of(pageNum-1,10, Sort.Direction.DESC,"id");
+        PageRequest pageRequest = PageRequest.of(pageNum-1,10, Sort.Direction.DESC,"freeId");
         Page<Freeboard> freeboardPage = freeboardRepository.findAll(pageRequest);
 
         if(freeboardPage.getSize() == 0) {
